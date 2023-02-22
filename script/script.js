@@ -107,3 +107,56 @@ const countCharacters = (str) => {
   return objectWithCharCount;
 };
 console.log(countCharacters("ihaveabigdogandacat"));
+
+function addItemPush(array, n) {
+  array[array.length] = n;
+  return array;
+}
+console.log(addItemPush([1, 4, 7, 89, 0, 4], 0));
+
+function addItemUnshift(array, n) {
+  arrayLength = array.length;
+  for (let i = arrayLength; i >= 0; i--) {
+    array[i] = array[i - 1];
+  }
+  array[0] = n;
+  return array;
+}
+console.log(addItemUnshift([99,1, 2, 3,99], -81));
+
+function palindrome(string) {
+  for (let i = 0; i < string.length / 2; i++) {
+    if (string[i] !== string[string.length - 1 - i]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(palindrome("asdfghhgfdsa"));
+
+function percent (array,n){
+  let count = 0;
+  let arrayLengthPercent = 100;
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === n){
+      ++count
+    }
+  }
+  return (count * arrayLengthPercent)/array.length
+}
+console.log(percent([1,2,4,7,4,9,0,4,5,8],4));
+
+function percent (array,n){
+let arrayPercent = 100;
+return array.reduce((acc,el) => el === n ? acc +1 : acc,0) * arrayPercent/array.length
+}
+console.log(percent([1,2,4,7,4,9,0,4,5,8],4));
+
+function percent (array,n){
+let arraySumPercent = 100;
+let arraySum = array.reduce((acc,el) => el + acc,0)
+let nSum = array.reduce((acc,el)=> el === n ? acc + el : acc,0)
+return (nSum * arraySumPercent)/arraySum
+}
+ console.log(percent([1,2,4,7,4,9,0,4,5,8],4));
