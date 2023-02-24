@@ -37,11 +37,7 @@ return array.filter((el,i) => i !== index)
 console.log(findByIndex([1,2,4,99],1));
 
 function deletesElem(array, index) {
-  for (let i = 0; i < array.length; i++) {
-    if (i === index) {
-      array.splice(index, 1);
-    }
-  }
+  array.splice(index, 1);
   return array;
 }
 console.log(deletesElem([1, 6, 5, 8, 43, 9, 8], 4));
